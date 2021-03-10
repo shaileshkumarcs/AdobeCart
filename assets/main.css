@@ -1,0 +1,329 @@
+/* 
+Author : Shailesh Kumar Dangi
+Rference: W3school
+*/
+body {
+		font-family: Roboto, Arial, sans-serif;
+		font-size: 17px;
+		padding: 0px 8px 8px 8px;
+		margin-top: 0px;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	/*General CSS END*/
+
+	.header {
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		margin: 0 -16px;
+		border-bottom: 1px solid #dedcdc;
+		padding: 10px;
+		position: relative;
+	}
+
+	.title {
+		padding: 0 16px;
+		flex: 15%;
+		-ms-flex: 15%;
+		/* IE10 */
+		-ms-flex-wrap: wrap;
+		position: absolute;
+	}
+
+	.cart-data {
+		padding: 0 16px;
+		flex: 80%;
+		-ms-flex: 80%;
+		/* IE10 */
+		justify-content: center;
+		/*display: flex;*/
+		text-align: center;
+		align-items: center;
+	}
+
+	.total-cart {
+		background: #65a15a;
+		color: #FFFFFF;
+		outline: none;
+		padding: 5px 10px;
+		border: 1px solid #65a15a;
+		border-radius: 2px;
+	}
+
+	.main {
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		margin: 0 -16px;
+	}
+
+	.item-container {
+		padding: 0 5px 8px 8px;
+		flex: 70%;
+		-ms-flex: 70%;
+		/* IE10 */
+	}
+
+	.item-wrap {
+		float: left;
+		width: 33.3%;
+		padding: 10px;
+		margin-bottom: 20px;
+		padding-bottom: 10px;
+		height: 361px;
+	}
+
+	.items {
+		/*padding: 10px 20px;*/
+		border: 1px solid #e8e8e8;
+		box-shadow: 2px 7px 7px 0 #ccc;
+		position: relative;
+		height: 100%;
+	}
+
+	.product-top {
+		overflow: hidden;
+		z-index: 1;
+		position: absolute;
+		left: 0;
+		top: 30px;
+		right: 0;
+	}
+
+	.product-top,
+	.flash {
+		font-size: 12px;
+		font-weight: 500;
+		text-transform: capitalize;
+		display: inline-block;
+		float: left;
+		line-height: 22px;
+		height: 22px;
+		min-width: 44px;
+		padding: 0 2px;
+		text-align: center;
+		background-color: #65a15a;
+		color: #fff;
+		position: relative;
+	}
+
+	.item-image {
+		position: relative;
+		text-align: center;
+		height: 280px;
+		padding: 5px 25px;
+	}
+
+	.image-size {
+		width: 100%;
+		height: 90%;
+		/*height: 300px;*/
+	}
+
+	.product-details {
+		padding: 5px 10px;
+		background: #e8e8e8;
+	}
+
+	h3,
+	h4,
+	h5 {
+		margin: 5px;
+	}
+
+	.product-add {
+		align-items: center;
+		display: flex;
+		display: -ms-flexbox;
+		justify-content: space-between;
+	}
+
+	.product-prices {
+		display: flex;
+	}
+
+	.product-price {
+		text-decoration: line-through 2px;
+		-webkit-text-decoration-color: #c72222;
+		/* Safari */
+		text-decoration-color: #c72222;
+	}
+
+	.product-add-cart-button {
+		background: none;
+		border: 1px solid #0fb7f7;
+		border-radius: 2px;
+		color: #0fb7f7;
+		padding: 5px 10px;
+		cursor: pointer;
+	}
+
+	.product-add-cart-button:focus {
+		outline: none;
+		/*outline: -webkit-focus-ring-color auto 1px;*/
+	}
+
+	/*Start Fare breakup css*/
+	.cart-items-wrap {
+		padding: 0px 8px 8px 5px;
+		flex: 25%;
+		-ms-flex: 25%;
+	}
+
+	.cart-items-heading {
+		margin-top: 10px;
+		padding: 5px 0px;
+		display: flex;
+		border-top: 1px solid #e8e8e8;
+		border-bottom: 1px solid #e8e8e8;
+	}
+
+	.width-50 {
+		flex: 50%;
+		-ms-flex: 50%;
+	}
+
+	.width-20 {
+		flex: 23%;
+		-ms-flex: 23%;
+		align-items: center;
+		justify-content: center;
+		display: flex;
+	}
+
+	.cart-items {
+		padding: 10px 0px;
+		border-bottom: 1px solid #e8e8e8;
+	}
+
+	.cart-item-list {
+		display: flex;
+		margin-bottom: 10px;
+	}
+
+	.cart-item-name {
+		border: 1px solid #e8e8e8;
+		padding: 10px 5px;
+		width: 90%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	.cart-remove {
+		border: 2px solid #e8e8e8;
+		border-radius: 50%;
+	}
+
+	.price-breackup-wrap {
+		border: 1px solid #e8e8e8;
+		margin-top: 10px;
+		border-radius: 2px;
+	}
+
+	.price-inner {
+		padding: 10px 10px;
+	}
+
+	.total {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 10px;
+	}
+
+	.final-total {
+		display: flex;
+		justify-content: space-between;
+		background: #e8e8e8;
+		padding: 10px 10px;
+	}
+
+	.quantity input {
+		-webkit-appearance: none;
+		border: none;
+		text-align: center;
+		width: 32px;
+		font-size: 16px;
+		color: #43484D;
+		font-weight: 300;
+	}
+
+/* Responsive css  */
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+/* Styles */
+    .item-container {
+        padding: 0 5px 8px 8px;
+        flex: 100%;
+        -ms-flex: 100%;
+    }
+    .item-wrap {
+        float: left;
+        width: 50%;
+        padding: 10px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        height: 450px;
+    }
+    .item-image {
+        position: relative;
+        text-align: center;
+        height: 365px;
+        padding: 5px 25px;
+    }
+}
+/* iPhone X ----------- */
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+/* Styles */
+    .item-container {
+        padding: 0 5px 8px 8px;
+        flex: 100%;
+        -ms-flex: 100%;
+    }
+    .item-wrap {
+        float: left;
+        width: 50%;
+        padding: 10px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        height: 361px;
+    }
+    .item-image {
+        position: relative;
+        text-align: center;
+        height: 275px;
+        padding: 5px 25px;
+    }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+/* Styles */
+    .item-image {
+        position: relative;
+        text-align: center;
+        height: 261px;
+        padding: 5px 25px;
+    }
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+/* Styles */
+    .item-image {
+        position: relative;
+        text-align: center;
+        height: 261px;
+        padding: 5px 25px;
+    }
+}

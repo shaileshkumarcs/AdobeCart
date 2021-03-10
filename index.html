@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Adobe Cart</title>
+	<link rel="stylesheet" href="./assets/main.css" />
+</head>
+
+
+<body>
+	<div class="cart-container">
+		<div class="header">
+			<div class="title">
+				<h3>All Items</h3>
+			</div>
+			<div class="cart-data">
+				<button class="total-cart">Atems <span class="cart-item-total">0</span> added to cart</button>
+			</div>
+		</div>
+		<div class="main">
+			<div class="item-container" id="ProductList">
+				<!-- Dynamic content come here -->
+			</div>
+			<!-- Cart html started here -->
+			<div class="cart-items-wrap">
+				<div class="cart-items-heading">
+					<div class="width-50">
+						<h4>Items (<span class='cart-item-total'>0</span>)</h4>
+					</div>
+					<div class="width-20">
+						<h4>Qty</h4>
+					</div>
+					<div class="width-20">
+						<h4>Price</h4>
+					</div>
+				</div>
+				<div class="cart-items" id="cartRow">
+					<!-- Dynamic contant come here -->
+				</div>
+				<!--End item cart list -->
+				<div class="price-breackup-wrap">
+					<div class="price-inner">
+						<div class="total">
+							<h5>Total</h5>
+						</div>
+						<div class="total" id="">
+							<div>
+								<p>Items (<span class="cart-item-total">0</span>) : </p>
+							</div>
+							<div class="price-items" id="ItemTotalAmount">
+								$0
+							</div>
+						</div>
+						<div class="total" id="">
+							<div>
+								<p>Discount : </p>
+							</div>
+
+							<div class="price-discount" id="ItemTotalAmount">
+								-$0
+							</div>
+						</div>
+						<div class="total">
+							<div>
+								<p>Type Discount : </p>
+							</div>
+
+							<div class="" id="ItemTotalAmount">
+								%
+							</div>
+						</div>
+					</div>
+					<div class="final-total">
+						<div>
+							<p>Order Total : </p>
+						</div>
+
+						<div class="cart-total-price" id="ItemTotalAmount">
+							$0
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="./assets/cart.js"></script>
+
+</html>
