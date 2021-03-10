@@ -24,6 +24,7 @@ body {
 		border-bottom: 1px solid #dedcdc;
 		padding: 10px;
 		position: relative;
+        height: 55px;
 	}
 
 	.title {

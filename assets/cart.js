@@ -79,7 +79,6 @@ function removeItem(event) {
 }
 
 function addToCartButtons(item) {
-	var messgeId = document.getElementById("message");
 	var cartItemNames = document.getElementsByClassName('cart-item-title');
 	var cartRows = document.getElementsByClassName('cart-item-list');
 	for (var i = 0; i < cartItemNames.length; i++) {  // For increment of quantity
@@ -87,6 +86,7 @@ function addToCartButtons(item) {
 			var inputTarget = cartRows[i].getElementsByClassName('cart-quantity-input')[0];
 			var inputValue = parseInt(inputTarget.value);
 			inputTarget.value = inputValue + 1;
+			message(item.name);
 			updateCartTotal();
 			return
 		}
@@ -117,10 +117,20 @@ function addToCartButtons(item) {
 					</div>";
 
 	document.getElementById("cartRow").insertAdjacentHTML('beforeend', cartRowHtml);
-	messgeId.innerText = item.name + ' is added to the cart';
+	message(item.name);
 	updateCartTotal();
 }
 
+function message(itemname) {
+	var messgeId = document.getElementById("message");
+	messgeId.innerHTML = `<button class="total-cart" >${itemname} added to
+					cart</button>`;
+	setTimeout(function () {
+		if (messgeId.firstChild) {
+			messgeId.firstChild.remove();
+		}
+	}, 2000);
+}
 
 /**
  * update cart value
