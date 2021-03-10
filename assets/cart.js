@@ -16,7 +16,7 @@ function loadJson() {
 			document.getElementById("ProductList").innerHTML = html;//'<h1>HI</h1>';
 		}
 	};
-	xhttp.open("GET", "http://localhost:8080/assets/cart.json", true);
+	xhttp.open("GET", "./assets/cart.json", true);
 	xhttp.send();
 }
 
