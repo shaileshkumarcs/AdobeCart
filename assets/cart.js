@@ -6,9 +6,7 @@ function loadJson() {
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function () {
 		if (this.readyState == 4 && this.status == 200) {
-			// console.log("success", this.responseText);
 			var data = JSON.parse((this.responseText.toString()));
-			// console.log(data['items']);
 			var html = '';
 			data.items.forEach(function (item) {
 				html += ProductList(item);
@@ -48,7 +46,6 @@ function ProductList(item, index) {
 // Increase and decrease function
 function increaseItem(evt) {
 	evt.preventDefault();
-	console.log("Increase Item");
 	var inputTarget = evt.target.parentNode.childNodes[3];
 	var value = parseInt(inputTarget.value);
 
@@ -63,13 +60,13 @@ function increaseItem(evt) {
 
 function decreaseItem(evt) {
 	evt.preventDefault();
-	console.log("Decrease Item");
 	var inputTarget = evt.target.parentNode.childNodes[3];
 	var value = parseInt(inputTarget.value);
 	if (value > 1) {
 		value = value - 1;
 	} else {
-		value = 1;
+		value = 0;
+		evt.target.parentElement.parentElement.remove(); // if value zero remove item from cart
 	}
 	inputTarget.value = value;
 	updateCartTotal();
@@ -82,11 +79,15 @@ function removeItem(event) {
 }
 
 function addToCartButtons(item) {
-	console.log("Add to cart button", item);
-	var cartItemNames = document.getElementsByClassName('cart-item-title')
-	for (var i = 0; i < cartItemNames.length; i++) {
+	var messgeId = document.getElementById("message");
+	var cartItemNames = document.getElementsByClassName('cart-item-title');
+	var cartRows = document.getElementsByClassName('cart-item-list');
+	for (var i = 0; i < cartItemNames.length; i++) {  // For increment of quantity
 		if (cartItemNames[i].innerText == item.name) {
-			alert('This item is already added to the cart')
+			var inputTarget = cartRows[i].getElementsByClassName('cart-quantity-input')[0];
+			var inputValue = parseInt(inputTarget.value);
+			inputTarget.value = inputValue + 1;
+			updateCartTotal();
 			return
 		}
 	}
@@ -116,6 +117,7 @@ function addToCartButtons(item) {
 					</div>";
 
 	document.getElementById("cartRow").insertAdjacentHTML('beforeend', cartRowHtml);
+	messgeId.innerText = item.name + ' is added to the cart';
 	updateCartTotal();
 }
 
